@@ -1,4 +1,4 @@
-class Card ():
+class Card():
     """
     Static class that handles cards. We represent cards as 32-bit integers, so 
     there is no object instantiation - they are just ints. Most of the bits are 
@@ -188,15 +188,14 @@ class Card ():
             s = colored(s, "red")
 
         r = Card.STR_RANKS[rank_int]
-
-        return " [ " +r+ " " +s+ " ] "
+        return " [ " +r+ " " +s.decode('utf-8')+ " ] "
 
     @staticmethod
     def print_pretty_card(card_int):
         """
         Expects a single integer as input
         """
-        print Card.int_to_pretty_str(card_int)
+        print(Card.int_to_pretty_str(card_int))
 
     @staticmethod
     def print_pretty_cards(card_ints):
@@ -211,4 +210,4 @@ class Card ():
             else:
                 output += Card.int_to_pretty_str(c) + " "
     
-        print output
+        print(output)
